@@ -46,13 +46,13 @@ print("Welcome to Eliza!")
 print("How are you feeling today?")
 
 while True:                                    # Keep going forever
-  input = raw_input("> ").lower()              # Ask the user for input, and save it in the "input" variable
-  if "goodbye" in input:                       # Check and see if the user said goodbye
+  resp = input("> ").lower()              # Ask the user for input, and save it in the "input" variable
+  if "goodbye" in resp:                       # Check and see if the user said goodbye
     print("Goodbye!")                          #   If they did, say goodbye back
     sys.exit(0)                                #   and then exit (end) the program
                                                # If we get here, then the user didn't say goodbye.  So let's figure out how to response
   for response in responses:                   # Look through all of the possible reponses listed above
-    if response[0] in input:                   #   Check if what the user said is the prompt we are looking at
+    if response[0] in resp:                   #   Check if what the user said is the prompt we are looking at
       print(random.choice(response[1]))        #     If the prompt matches, then choose a random response and print it out for the user
       break                                    #     If the prompt matches, then stop looing for more prompts so we don't print out more than one response
 
